@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Polymer Starter Kit">
-  <title>Polymer Starter Kit</title>
+  <title>Busqueda Youtube</title>
 
   <!-- Place favicon.ico in the `app/` directory -->
 
@@ -82,19 +82,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <span>Home</span>
           </a>
 
-          <a data-route="users" href="{{baseUrl}}users">
-            <iron-icon icon="info"></iron-icon>
-            <span>Users</span>
+          <a data-route="videos" href="{{baseUrl}}videos">
+            <iron-icon icon="youtube-searched-for"></iron-icon>
+            <span>Busqueda por video</span>
           </a>
 
-          <a data-route="contact" href="{{baseUrl}}contact">
-            <iron-icon icon="mail"></iron-icon>
-            <span>Contact</span>
-          </a>
-
-          <a data-route="map" href="{{baseUrl}}map">
-            <iron-icon icon="star"></iron-icon>
-            <span>Map</span>
+          <a data-route="canales" href="{{baseUrl}}canales">
+            <iron-icon icon="pageview"></iron-icon>
+            <span>Busqueda por canal</span>
           </a>
         </paper-menu>
       </paper-scroll-header-panel>
@@ -113,12 +108,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <!-- Application name -->
           <div class="middle middle-container">
-            <div class="app-name">Polymer Starter Kit</div>
+            <div class="app-name">Navegando por Youtube</div>
           </div>
 
           <!-- Application sub title -->
           <div class="bottom bottom-container">
-            <div class="bottom-title">The future of the web today</div>
+            <div class="bottom-title">Probando Polymer</div>
           </div>
         </paper-toolbar>
 
@@ -127,65 +122,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <iron-pages attr-for-selected="data-route" selected="{{route}}">
             <section data-route="home" tabindex="-1">
               <paper-material elevation="1">
+                <h3 class="page-title" tabindex="-1">Buscador de Youtube</h3>
                 <div class="layout horizontal">
                   <div class="flex">
-                    <p>Hola</p>
-                  </div>
-                  <div class="flex two">
-                    <p>Hola</p>
-                  </div>
-                  <div class="flex">
-                    <p>Hola</p>
-                  </div>
-                </div>
-              </paper-material>
-
-              <paper-material elevation="1">
-                <div class="horizontal layout">
-                  <div class="layout horizontal centrer">
-                    <p>Hola</p>
+                    <p>
+                      Este buscador es una muestra de como consumir un JSON y 
+                      aplicarle un web component al resultado
+                    </p>
                   </div>
                 </div>
               </paper-material>
             </section>
 
-            <section data-route="users" tabindex="-1">
+            <section data-route="videos" tabindex="-1">
               <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Users</h1>
-                <p>This is the users section</p>
-                <a href$="{{baseUrl}}users/Addy">Addy</a><br>
-                <a href$="{{baseUrl}}users/Rob">Rob</a><br>
-                <a href$="{{baseUrl}}users/Chuck">Chuck</a><br>
-                <a href$="{{baseUrl}}users/Sam">Sam</a>
+                <h3 class="page-title" tabindex="-1">Busqueda por video</h3>
               </paper-material>
+              <busqueda-youtube tipo="video"></busqueda-youtube>
             </section>
 
-            <section data-route="user-info" tabindex="-1">
+            <section data-route="canales" tabindex="-1">
               <paper-material elevation="-1">
-                <h1 class="page-title" tabindex="-1">User: {{params.name}}</h1>
-                <div>This is {{params.name}}'s section</div>
+                <h3 class="page-title" tabindex="-1">Busqueda por canal</h3>
               </paper-material>
+              <busqueda-youtube tipo="channel"></busqueda-youtube>
             </section>
-
-            <section data-route="contact" tabindex="-1">
-              <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Contact</h1>
-                <p>This is the contact section</p>
-              </paper-material>
-            </section>
-
-            <section data-route="map" tabindex="-1">
-              <paper-material elevation="1">
-                <h1 class="page-title" tabindex="-1">Map</h1>
-                <style>
-                  google-map {
-                    height: 600px;
-                  }
-                </style>
-                <google-map latitude="37.77493" longitude="-122.41942" api-key="AIzaSyDL3IcJKSZiJvHnVgvpvjz2pKqvKyeFkng"></google-map>
-
-              </paper-material>
-            </section>
+            
           </iron-pages>
         </div>
       </paper-scroll-header-panel>
